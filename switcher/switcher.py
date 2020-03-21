@@ -1,14 +1,16 @@
 from abc import ABCMeta, abstractmethod
 
 class SwitcherBaseClass(metaclass=ABCMeta):
-   
-   @abstractmethod
-   def base_switch(self, argument):
+  def __init__(self, name=None):
+    if name:
+      self.name = name
 
-      # Get the method from 'self'. Default to a lambda
+  @abstractmethod
+  def base_switch(self, argument):
+    # Get the method from 'self'. Default to a lambda
 
-      method = getattr(self, argument, lambda: "Invalid request")
+    method = getattr(self, argument, lambda: "Invalid request")
 
-      # Call the method as we return it
+    # Call the method as we return it
 
-      return method()
+    return method()
