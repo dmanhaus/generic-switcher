@@ -1,6 +1,7 @@
 from ..switcher import SwitcherBaseClass
 
 import sys
+import os
 import inspect
 import pkgutil
 from pathlib import Path
